@@ -1,0 +1,15 @@
+$ cd IrisFisher
+$ cd backend
+$ sudo -H pip install -U pipenv //installing pipenv to avoid "pipenv: command not found"
+$ pipenv install django 
+$ pipenv shell
+$ pipenv requirements.txt
+$ cd iris_api/
+$ python manage.py makemigrations
+$ python manage.py migrate
+
+
+$ cd IrisFisher
+$ create-react-app frontend
+$ cd frontend
+$ npm start
