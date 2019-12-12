@@ -39,8 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'iris',
     'rest_framework',
-    'corsheaders',
-    'users',
+    'corsheaders'
+    # 'users',
 ]
 
 REST_FRAMEWORK = {
@@ -131,7 +131,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
-AUTH_USER_MODEL = 'users.CustomUser'
+# AUTH_USER_MODEL = 'users.CustomUser'
 
 
 
