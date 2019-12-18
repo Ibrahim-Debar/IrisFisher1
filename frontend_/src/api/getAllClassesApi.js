@@ -11,6 +11,7 @@ const getAllClassesApi = async () =>{
       }
     });
     return result;
+    
 }
 
 
