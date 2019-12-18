@@ -25,8 +25,7 @@ SECRET_KEY = 'fscrn!hg2qe6m0f#9#&dqkiqgnv-(9!_crexi9=x@tiux2a29$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -134,4 +133,5 @@ STATIC_URL = '/static/'
 # AUTH_USER_MODEL = 'users.CustomUser'
 
 
+CORS_ORIGIN_WHITELIST = "http://localhost:3000",
 

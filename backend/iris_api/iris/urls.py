@@ -7,6 +7,9 @@ from . import views
 
 urlpatterns=[
 	url(r'^import_data/$', views.import_data, name='import_data'),
-    url(r'', views.All.as_view()),
+    url(r'all/', views.All.as_view()),
     url(r'<int:pk>/', views.Detail.as_view()),
+    url(r'^all_classe/', views.all_classe.as_view()),
+    url('^classe/(?P<name>.+)/$', views.get_classe.as_view()),
+ 
 ]

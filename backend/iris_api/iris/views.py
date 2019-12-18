@@ -5,6 +5,10 @@ from django.http import HttpResponse
 from .models import IrisManagement
 from rest_framework import generics
 from .serializers import IrisManagementSerializer
+from rest_framework.decorators import detail_route, list_route
+from rest_framework.response import Response
+
+
 
 def import_data(request):
 	df = pd.read_csv('/Users/afafbenzinoun/Iris/management/iriss.csv', sep=',', engine='python')
@@ -28,6 +32,24 @@ def import_data(request):
 class All(generics.ListCreateAPIView):
     queryset = IrisManagement.objects.all()
     serializer_class = IrisManagementSerializer
+
+
+class all_classe(generics.ListCreateAPIView):
+    queryset = IrisManagement.objects.all()
+    serializer_class = IrisManagementSerializer
+
+    def list(self, request):
+         return Response(set(self.get_queryset().values_list("classe", flat=True)))
+
+class get_classe(generics.ListCreateAPIView):
+     # queryset = IrisManagement.objects.all()
+     serializer_class = IrisManagementSerializer
+
+     def get_queryset(self):
+        name = self.kwargs['name']
+        return IrisManagement.objects.filter(classe=name)
+
+
 
 
 class Detail(generics.RetrieveUpdateDestroyAPIView):
